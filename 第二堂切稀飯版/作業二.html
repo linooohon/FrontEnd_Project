@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css' />
+    <style>
+        
+        /* topbar */
+
+        .topbar{
+            width: 100%;
+            background: url('./assets (3)/asset 7.png');
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .topbar nav{
+            width: 100%;
+            display: flex;
+        }
+        .topbar-item{
+            padding-left: 45px;
+            padding-top: 20px;
+            width: 100%;
+            /* background-color: lawngreen; */
+        }
+        .topbar-item ul{
+            width: 100%;
+            display: flex;
+        }
+        .topbar-item ul li{
+            padding: 14px;
+        }
+
+        .topbar-item ul li a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .topbar-item ul li a:hover{
+            color: #518531;
+        }
+        .topbar-logo{
+            padding-top: 20px;
+            width: 100%;
+        }
+        .topbar-logo img{
+            width: 150px;
+            display: block;
+            margin-left: 140px;
+        }
+        .topbar-shopdetail{
+            width: 100%;
+            /* background-color: lightcoral; */
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            padding-top: 15px;
+            
+        }
+        .topbar-shopdetail img{
+            width: 23px;
+            padding: 10px;
+        }
+
+        /* major */
+
+        .major{
+            width: 100%;
+            display: flex;
+            background: url('./assets (3)/asset 7.png');
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+        .major .major-word, .major .major-img{
+            width: 50%;
+        }
+
+        .major .major-img{
+        }
+
+        .major img{
+            width: 85%;
+        }
+
+
+        .major .major-word{
+            /* width: 100%; */
+            margin-top: 150px;
+            /* margin-bottom: auto; */
+            margin-left: 250px;
+        }
+
+
+        .major .major-word h1{
+            font-size: 55px;
+            line-height: 80px;
+        }
+
+        .major .major-word p{
+            font-size: 20px;
+            padding-bottom: 40px;
+        }
+
+        .major .major-word a{
+            width: 100%;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 12px;
+            line-height: 50px;
+            letter-spacing: 3px;
+        }
+
+        .major .major-word a .border{
+            width: 180px;
+            height: 50px;
+            background-color: black;
+        }
+
+        /* slogan */
+
+
+        .slogan{
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .slogan h1{
+            font-size: 36px;
+            line-height: 45px;
+            margin-bottom: 40px;
+            color: #518531;
+        }
+
+        .slogan em{
+            font-style: italic;
+            /* background-color: yellow; */
+        }
+
+        /* promoteword */
+
+        .promoteword{
+            width: 100%;
+            display: flex;
+            /* background-color: #aaa; */
+        }
+
+        .promoteword-img{
+            width: 80%;
+        }
+        .promoteword-img img{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .promoteword-left{
+            width: 100%;
+            text-align: right;
+            line-height: 25px;
+        }
+
+        .promoteword-right{
+            width: 100%;
+            line-height: 25px;
+            align-self: flex-start;
+        }
+
+        .promoteword h3{
+            width: 100%;
+            font-size: 23px;
+            font-weight: bolder;
+            /* background-color: yellow; */
+        }
+        .promoteword p{
+            padding-top: 20px;
+            color: #aaa;
+            /* background-color: lawngreen; */
+        }
+
+        .promoteword-left-1{
+            padding-top: 35px;
+            padding-bottom: 36px;
+        }
+        .promoteword-left-2{
+            padding-bottom: 36px;
+        }
+
+        .promoteword-right-1{
+            padding-top: 35px;
+            padding-bottom: 36px;
+        }
+        .promoteword-right-2{
+            padding-bottom: 36px;
+        }
+
+
+        /* merchandise */
+
+        .merchandise .merchandise-title{
+            font-size: 40px;
+            /* background-color: blueviolet; */
+            text-align: center;
+            padding-bottom: 10px;
+            color: #518531;
+            font-weight: bolder;
+            padding-top: 70px;
+            padding-left: 30px;
+        }
+
+
+        .merchandise{
+            width: 100%;
+        }
+        .merchandise .merchandise-block{
+            /* background-color: brown; */
+            width: 100%;
+        }
+
+        .merchandise p, h4, a{
+            width: 33.3333333%;
+            margin: auto;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .merchandise h4{
+            width: 100%;
+            font-size: 20px;
+        }
+
+
+        .merchandise img{
+            /* background-color: #aaa; */
+            padding: 10px;
+        }
+
+
+
+        .merchandise .merchandise-block .merchandise-block-first{
+            width: 75%;
+            display: flex;
+            margin: auto;
+        }
+        .merchandise .merchandise-block .merchandise-block-first img{
+            width: 100%;
+        }
+        .merchandise .merchandise-block .merchandise-block-first .merchandise-block-first-1{
+            width: 35%;
+            padding-right: 40px;
+        }
+        .merchandise .merchandise-block .merchandise-block-first .merchandise-block-first-2{
+            width: 35%;
+            padding-right: 40px;
+        }
+        .merchandise .merchandise-block .merchandise-block-first .merchandise-block-first-3{
+            width: 35%;
+        }
+
+
+        .merchandise .merchandise-block .merchandise-block-second{
+            width: 75%;
+            display: flex;
+            margin: auto;
+        }
+        .merchandise .merchandise-block .merchandise-block-second img{
+            width: 100%;
+        }
+        .merchandise .merchandise-block .merchandise-block-second .merchandise-block-second-1{
+            width: 35%;
+            padding-right: 40px;
+        }
+        .merchandise .merchandise-block .merchandise-block-second .merchandise-block-second-2{
+            width: 35%;
+            padding-right: 40px;
+        }
+        .merchandise .merchandise-block .merchandise-block-second .merchandise-block-second-3{
+            width: 35%;
+        }
+
+
+
+        .merchandise .merchandise-block .merchandise-block-third{
+            width: 75%;
+            display: flex;
+            margin: auto;
+            padding-bottom: 80px;
+        }
+        .merchandise .merchandise-block .merchandise-block-third img{
+            width: 100%;
+        }
+        .merchandise .merchandise-block .merchandise-block-third .merchandise-block-third-1{
+            width: 35%;
+            padding-right: 40px;
+        }
+        .merchandise .merchandise-block .merchandise-block-third .merchandise-block-third-2{
+            width: 35%;
+            padding-right: 40px;
+        }
+        .merchandise .merchandise-block .merchandise-block-third .merchandise-block-third-3{
+            width: 35%;
+        }
+
+
+        /* intro */
+
+
+        .intro{
+            width: 100%;
+            /* background-color: crimson; */
+            background: url('./assets (3)/asset 43.png');
+            display: flex;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .intro .intro-video{
+            width: 100%;
+        }
+        .intro .intro-video img{
+            width: 60%;
+            padding-left: 150px;
+        }
+
+        .intro .intro-word{
+            width: 50%;
+            margin-left: 300px;
+            margin-top: 150px;
+        }
+
+
+        .intro .intro-word h1{
+            font-size: 30px;
+            font-weight: bolder;
+            line-height: 40px;
+            color: #518531;
+            padding-bottom: 20px;
+        }
+
+        .intro .intro-word p{
+            line-height: 25px;
+            padding-bottom: 50px;
+        }
+
+        .intro .intro-word a{
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            line-height: 50px;
+        }
+        .intro .intro-word .border2{
+            width: 180px;
+            height: 50px;
+            border: solid 1px black;
+        }
+
+        /* instagram */
+
+
+        .instagram .instagram-img{
+            width: 20%;
+            margin: auto;
+            padding-top: 50px;
+            padding-bottom: 70px;
+            /* background-color: blueviolet; */
+
+        }
+
+        .instagram .instagram-img h3{
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: 5px;
+
+        }
+
+        .instagram .instagram-img img{
+            width: 100%;
+        }
+
+        .instagram .instagram-smallimg{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .instagram .instagram-smallimg .instagram-smallimg-1{
+            width: 15%;
+            margin-right: 20px;
+        }
+        .instagram .instagram-smallimg .instagram-smallimg-2{
+            width: 15%;
+            margin-right: 20px;
+        }
+        .instagram .instagram-smallimg .instagram-smallimg-3{
+            width: 15%;
+            margin-right: 20px;
+        }
+        .instagram .instagram-smallimg .instagram-smallimg-4{
+            width: 15%;
+        }
+
+        .instagram .instagram-smallimg img{
+            width: 100%;
+            padding-bottom: 60px;
+        }
+
+        /* footer */
+
+
+        .footer{
+            width: 100%;
+            background-color: #f4f4f4;
+        }
+
+        .footer .footer-img{
+            width: 10%;
+            margin: auto;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer .footer-img img{
+            width: 100%;
+        }
+
+        .footer .footer-service{
+            width: 40%;
+            display: flex;
+            text-align: center;
+            /* background-color: red; */
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 40px;
+        }
+
+        .footer .footer-service .line{
+            /* background-color: #aaa; */
+        }
+
+
+        .footer .footer-service a{
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .footer .footer-service .footer-service-aboutus{
+            width: 33.333333%;
+        }
+
+        .footer .footer-service .footer-service-customerservice{
+            width: 33.333333%;
+        }
+
+        .footer .footer-service .footer-service-subscription{
+            width: 33.333333%;
+        }
+
+
+        .footer .footer-contact{
+            width: 100%;
+            /* margin: auto; */
+            text-align: center;
+            background-color: transparent;
+            color: transparent;
+            padding-top: 30px;
+            padding-bottom: 70px;
+            text-decoration: none;
+        }
+
+        .footer .footer-contact .fa-twitter{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+         }
+
+        .footer .footer-contact .fa-volleyball-ball{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .footer .footer-contact .fa-behance-square{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .footer .footer-contact .fa-instagram{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .footer .footer-copyright p{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <nav>
+
+            <div class="topbar-item">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Featured<span class=""></span></a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Element<span class=""></span></a></li>
+                </ul>
+            </div>
+
+            <div class="topbar-logo">
+                <a href="#"><img src="./assets (3)/asset 6.png"></a>
+            </div>
+
+            <div class="topbar-shopdetail">
+                <div class="topbar-shopdetail-search">
+                    <a href="#"><img src="./assets (3)/asset 44.svg"></a>
+                </div>
+                <div class="topbar-shopdetail-personalinfo">
+                    <a href="#"><img src="./assets (3)/asset 45.svg"></a>
+                </div>
+                <div class="topbar-shopdetail-shoppingbag">
+                    <a href="#"><img src="/assets (3)/asset 46.svg"></a>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+
+    <div class="major">
+        <div class="major-word">
+            <h1>Collection New <br> Beautiful</h1>
+            <p>from $69</p>
+            <a href="##"><div class="border">SHOP NOW</div></a>
+        </div>
+        <div class="major-img"><img src="./assets (3)/asset 8.png"></div>
+    </div>
+
+
+    <div class="slogan">
+        <h1>The important benefits of<br>
+            greenery for the environment and health</h1>
+        <em>Trees have always been considered as "lungs" of the earth. 
+            Planting lots of trees helps provide a great deal of oxygen for us to breathe.<br>
+            On average, one tree can provide enough oxygen for four people. 
+            At the same time they also absorb C02, ammonia, S02, .. in the world!</em>
+    </div>
+
+<div class="promoteword">
+    <div class="promoteword-left">
+        <div class="promoteword-left-1">
+            <h3>Reducing environmental pollution</h3>
+            <p>Trees have always been considered as "lungs" of the earth.</p>
+        </div>
+        <div class="promoteword-left-2">
+            <h3>Save water and reduce soil erosion</h3>
+            <p>Trees can slow down the evaporation of water, increasing<br> air humidity.</p>
+        </div>
+        <div class="promoteword-left-3">
+            <h3>Reduce street temperatures</h3>
+            <p>Planting more trees in densely populated areas will not only<br> make the air there more fresh</p>
+        </div>
+    </div>
+    <div class="promoteword-img">
+        <img src="./assets (3)/asset 10.png">
+    </div>
+    <div class="promoteword-right">
+        <div class="promoteword-right-1">
+            <h3>Energy conservation</h3>
+            <p>One tree can cool down, cool down 10 rooms</p>
+        </div>
+        <div class="promoteword-right-2">
+            <h3>Prevent ultraviolet influence</h3>
+            <p>Green trees become shade to block the sunlight from the <br>road</p>
+        </div>
+        <div class="promoteword-right-3">
+            <h3>Improve human health</h3>
+            <p>Living in a quiet, cool, clean and fresh environment will<br> make your health better</p>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="merchandise">
+    <div class="merchandise-title">Staff.Pick</div>
+    <div class="merchandise-block">
+        <div class="merchandise-block-first">
+            <div class="merchandise-block-first-1">
+                <a href="#">
+                    <img src="./assets (3)/asset 25.png" alt="Sapien Libero">
+                    <h4><a href="#">Sapien Libero</a></h4>
+                    <p>150.00</p>
+                </a>
+            </div>
+            <div class="merchandise-block-first-2">
+                <a href="#">
+                    <img src="./assets (3)/asset 13.png" alt="Sapien Libero">
+                    <h4><a href="#">Fringilla Augue 360</a></h4>
+                    <p>$200.00$150.00</p>
+                </a>
+            </div>
+            <div class="merchandise-block-first-3">
+                <a href="#">
+                    <img src="./assets (3)/asset 15.png" alt="Sapien Libero">
+                    <h4><a href="#">Faded Short Sleeves Variable</a></h4>
+                    <p>$200.00$150.00</p>
+                </a>
+            </div>
+        </div>
+        <div class="merchandise-block-second">
+            <div class="merchandise-block-second-1">
+                <a href="#">
+                    <img src="./assets (3)/asset 17.png" alt="Sapien Libero">
+                    <h4><a href="#">Purple Flowers</a></h4>
+                    <p>$180.00</p>
+                </a>
+            </div>
+            <div class="merchandise-block-second-2">
+                <a href="#">
+                    <img src="./assets (3)/asset 19.png" alt="Sapien Libero">
+                    <h4><a href="#">Adipiscing Cursus Out Of Stock</a></h4>
+                    <p>$450.00</p>
+                </a>
+            </div>
+            <div class="merchandise-block-second-3">
+                <a href="#">
+                    <img src="./assets (3)/asset 21.png" alt="Sapien Libero">
+                    <h4><a href="#">Fringilla Augue</a></h4>
+                    <p>$320.00</p>
+                </a>
+            </div>
+        </div>
+        <div class="merchandise-block-third">
+            <div class="merchandise-block-third-1">
+                <a href="#">
+                    <img src="./assets (3)/asset 23.png" alt="Sapien Libero">
+                    <h4><a href="#">Purple Flowers</a></h4>
+                    <p>$200.00$150.00</p>
+                </a>
+            </div>
+            <div class="merchandise-block-third-2">
+                <a href="#">
+                    <img src="./assets (3)/asset 25.png" alt="Sapien Libero">
+                    <h4><a href="#">Plant</a></h4>
+                    <p>$200.00$150.00</p>
+                </a>
+            </div>
+            <div class="merchandise-block-third-3">
+                <a href="#">
+                    <img src="./assets (3)/asset 26.png" alt="Sapien Libero">
+                    <h4><a href="#">Plant Beautiful</a></h4>
+                    <p>$150.00</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="intro">
+
+    <div class="intro-word">
+        <h1>A Number Of Our Products</h1>
+        <p>Pick up all you need to keep your board in optimum 
+            condition with Decathlon’s set of surfboard accessories.</p>
+            <a href="#"><div class="border2">SHOP NOW</div></a>
+    </div>
+
+    <div class="intro-video">
+        <iframe src="" frameborder="0"></iframe>
+        <img src="./assets (3)/asset 29.png">
+    </div>
+
+</div>
+
+
+<div class="instagram">
+
+    <div class="instagram-img">
+        <img src="./instagram.png">
+        <h3>SHOP INSTAGRAM</h3>
+    </div>
+
+    <div class="instagram-smallimg">
+
+        <div class="instagram-smallimg-1">
+            <a href="#">
+                <img src="./assets (3)/asset 30.png">
+            </a>
+        </div>
+
+        <div class="instagram-smallimg-2">
+            <a href="#">
+                <img src="./assets (3)/asset 31.png">
+            </a>
+        </div>
+
+        <div class="instagram-smallimg-3">
+            <a href="#">
+                <img src="./assets (3)/asset 32.png">
+            </a>
+        </div>
+
+        <div class="instagram-smallimg-4">
+            <a href="#">
+                <img src="./assets (3)/asset 33.png">
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="footer-img">
+        <a href="#">
+            <img src="./assets (3)/asset 6.png">
+        </a>
+    </div>
+    <div class="footer-service">
+        <div class="footer-service-aboutus">
+            <a href="#">ABOUT US
+            </a>
+        </div>
+
+        <div class="footer-service-customerservice">
+            <a href="#">CUSTOMER SERVICE
+            </a>
+        </div>
+
+        <div class="footer-service-subscription">
+            <a href="#">SUBSCRIPTION</a>
+        </div>
+    </div>
+    <div class="footer-contact">
+        <a href="#">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-volleyball-ball"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-behance-square"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <div class="footer-copyright">
+        <p> &copy; Copyright - linooohon</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+    
+</body>
+</html>
+
+
