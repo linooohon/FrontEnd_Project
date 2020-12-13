@@ -1,0 +1,86 @@
+/* 控制 subphoto 的三個 block 的位置寫得不夠好，看可不可以再修一下*/
+.subphoto-wrap{
+    width: 320px;
+    position: absolute;
+    right: 0;
+    top: 18%;
+    /* border: 1px solid #000; */
+}
+
+.subphoto-item{
+    width: 320px;
+    height: 200px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    margin: 8px 0px;
+    border-radius: 5px;
+    /* 為了產生一點按鈕位移效果 top先設 -5 */
+    top: -5px;
+
+    box-shadow: 1px 1px 0px 0px #dcdcdc,
+                2px 2px 0px 0px #dcdcdc,
+                3px 3px 0px 0px #dcdcdc,
+                4px 4px 0px 0px #dcdcdc,
+                5px 5px 0px 0px #dcdcdc;
+}
+
+.subphoto-item-photo{
+    position: relative;
+    width: 320px;
+    height: 200px;
+    background-color: #000;
+}
+
+.subphoto-item-photo img{
+    position: absolute;
+    right: 0;
+}
+
+
+.subphoto-item-txt{
+    position: absolute;
+    text-align: center;
+    width: 320px;
+    height: 100px;
+    top: 25%;
+    transform: translateX(500px);
+    transition: all .8s ease-in-out;
+    background-color: #808080;
+    color: #fff;
+    border-radius: 5px;
+}
+.subphoto-item-txt h3{
+    font-family: 'Annie Use Your Telescope', cursive;
+    padding-top: 10px;
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+.subphoto-item-txt p{
+    font-family: 'Comfortaa', cursive;
+    padding-top: 10px;
+    font-size: 10px;
+}
+
+
+.subphoto-item:hover .subphoto-item-txt{
+    transform: translateX(0);
+    opacity: 0.7;
+}
+
+.subphoto-item:hover .subphoto-item-photo{
+    opacity: 0.5;
+}
+
+.subphoto-item:hover{
+      /* 碰到後 往下 2px */
+    top: -3px;
+
+    box-shadow: 1px 1px 0px 0px #808080,
+                1px 1px 0px 0px #808080,
+                2px 2px 0px 0px #808080,
+                3px 3px 0px 0px #808080,
+                3px 3px 0px 0px #808080;
+}

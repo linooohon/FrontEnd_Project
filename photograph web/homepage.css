@@ -1,0 +1,92 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.HomePage{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    margin: auto;
+}
+
+.MainBar{
+    width: 20%;
+    background-color: #f6f6f6;
+}
+
+.MainLandingContent{
+    width: 80%;
+    background-color: #f6f6f6;
+}
+
+
+.loGo{
+    height: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loGo a{
+    font-family: 'Annie Use Your Telescope', cursive;
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+.galleryNav{
+    font-family: 'Comfortaa', cursive;
+    font-size: 13px;
+    height: 200px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    border-right: 5px double #a7a7a7;
+}
+
+.gallery-subject{
+    padding: 8px 8px 8px 20px;
+    box-sizing: border-box;
+}
+
+.gallery-subject a{
+    color: #a7a7a7;
+    text-decoration: none;
+}
+
+.gallery-subject a:hover{
+    color: #000;
+    text-decoration: underline;
+}
+
+.infoNav{
+    font-family: 'Comfortaa', cursive;
+    font-size: 13px;
+    height: 450px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    border-right: 5px double #a7a7a7;
+}
+
+.info-subject{
+    padding: 8px 8px 8px 20px;
+    box-sizing: border-box;
+}
+
+.info-subject a{
+    color: #a7a7a7;
+    text-decoration: none;
+}
+
+.info-subject a:hover{
+    color: #000;
+    text-decoration: underline;
+}
+
+.mainPhoto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

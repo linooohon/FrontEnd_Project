@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.introduction{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin: auto;
+}
+
+/* title */
+.intro{
+    position: relative;
+}
+
+/* 操作 intro 偶數區塊反向*/
+.intro:nth-child(even){
+    display: flex;
+    justify-content: flex-end;
+}
+
+.intro-title{
+    width: 350px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 360px;
+}
+
+.intro-title-h2{
+    background-color: #BB0506;
+    color: #fff;
+    font-size: 30px;
+    font-weight: normal;
+    height: 125px;
+    text-align: center;
+    line-height: 125px;
+    letter-spacing: 2px;
+    opacity: 0.95;
+}
+
+.intro-title-block{
+    background-color: antiquewhite;
+    height: 250px;
+    font-size: 23px;
+    padding: 36px 12px 12px 12px;
+    line-height: 30px;
+    box-sizing: border-box;
+    opacity: 0.95;
+}
+
+.intro-title-block p{
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+}
+
+/* graybox */
+.intro-graybox{
+    background-color: #f5f5f5;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+
+.intro-graybox-reverse{
+    background-color: #f5f5f5;
+    width: 450px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 45px;
+    right: 200px;
+}
+
+/* pic */
+.intro-pic{
+    position: absolute;
+    top: 125px;
+    right: 80px;
+    z-index: 0;
+}
+
+.intro-pic-reverse{
+    position: absolute;
+    top: 125px;
+    left: 0px;
+    z-index: 0;
+}
+
+.playbutton{
+    position: absolute;
+    top: 190px;
+    right: -10px;
+}
+
+.playbutton-reverse{
+    position: absolute;
+    top: 190px;
+    left: -10px;
+}
+
+/* txt */
+.intro-txt{
+    background-color: #eeeeee;
+    width: 670px;
+    position: absolute;
+    top: 500px;
+    right: 250px;
+    opacity: 0.85;
+}
+
+.intro-txt-reverse{
+    background-color: #eeeeee;
+    width: 670px;
+    height: 200px;
+    position: absolute;
+    top: 500px;
+    right: 0px;
+    opacity: 0.85;
+}
+
+.intro-txt-h4{
+    color: #BB0506;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+/* 製造裝飾線條 利用偽元素 after  */
+.intro-txt-h4 h4::after{
+    content: "";
+    background-color: #BB0506;
+    position: absolute;
+    top: 55%;
+    height: 2px;
+    width: 460px;
+    right: 30px;
+}
+
+.txt-block-item-h5{
+    background-color: #000;
+    color: #fff;
+    width: fit-content;
+    padding: 5px;
+    margin-left: 18px;
+    border-radius: 5px;
+}
+
+.txt-block-item-p{
+    position: relative;
+    margin: 3px 0px 3px 35px;
+}
+
+/* 製造敘述文字前面的 "點" */
+.txt-block-item-p p::before{
+    content: "";
+    background-color: #BB0506;
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    top: 10px;
+    left: -12px;
+}
+
+
+
