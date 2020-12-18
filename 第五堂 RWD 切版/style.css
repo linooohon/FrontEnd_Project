@@ -1,0 +1,718 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.col-1{width: 8.33333333%;}
+.col-2{width: 16.6666666%;}
+.col-3{width: 25%;}
+.col-4{width: 33.3333333%;}
+.col-5{width: 41.6666666%;}
+.col-6{width: 50%;}
+.col-7{width: 58.3333333%;}
+.col-8{width: 66.6666666%;}
+.col-9{width: 75%;}
+.col-10{width: 83.333333%;}
+.col-11{width: 91.666666%;}
+.col-12{width: 100%;}
+
+@media screen and (min-width: 768px){
+    .col-md-1{width: 8.33333333%;}
+    .col-md-2{width: 16.6666666%;}
+    .col-md-3{width: 25%;}
+    .col-md-4{width: 33.3333333%;}
+    .col-md-5{width: 41.6666666%;}
+    .col-md-6{width: 50%;}
+    .col-md-7{width: 58.3333333%;}
+    .col-md-8{width: 66.6666666%;}
+    .col-md-9{width: 75%;}
+    .col-md-10{width: 83.333333%;}
+    .col-md-11{width: 91.666666%;}
+    .col-md-12{width: 100%;}
+}
+@media screen and (min-width: 1024px){
+    .col-lg-1{width: 8.33333333%;}
+    .col-lg-2{width: 16.6666666%;}
+    .col-lg-3{width: 25%;}
+    .col-lg-4{width: 33.3333333%;}
+    .col-lg-5{width: 41.6666666%;}
+    .col-lg-6{width: 50%;}
+    .col-lg-7{width: 58.3333333%;}
+    .col-lg-8{width: 66.6666666%;}
+    .col-lg-9{width: 75%;}
+    .col-lg-10{width: 83.333333%;}
+    .col-lg-11{width: 91.666666%;}
+    .col-lg-12{width: 100%;}
+}
+@media screen and (min-width: 1200px){
+    .col-xl-1{width: 8.33333333%;}
+    .col-xl-2{width: 16.6666666%;}
+    .col-xl-3{width: 25%;}
+    .col-xl-4{width: 33.3333333%;}
+    .col-xl-5{width: 41.6666666%;}
+    .col-xl-6{width: 50%;}
+    .col-xl-7{width: 58.3333333%;}
+    .col-xl-8{width: 66.6666666%;}
+    .col-xl-9{width: 75%;}
+    .col-xl-10{width: 83.333333%;}
+    .col-xl-11{width: 91.666666%;}
+    .col-xl-12{width: 100%;}
+}
+
+@media screen and (max-width: 767px) {
+    /* 讓 checkbox 消失 */
+    #menu-control{
+        position: absolute;
+        z-index: -2;
+        opacity: 0;
+    }
+
+    /* 讓 側邊選單跑出來 */
+    #menu-control:checked ~ .hamburger .main-nav{
+        transform: translateX(0);
+    }
+
+    .menu-btn{
+        width: 40px;
+        height: 40px;
+        display: block;
+        position: absolute;
+        top: 9px;
+        left: 15px;
+        cursor: pointer;
+    }
+
+    /* 這裡這樣設是怕“選單”這裡個字跑出來 */
+    .menu-btn span{
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        display: block;
+        overflow: hidden;
+    }
+    
+    /* 單一 span 做漢堡的方式 */
+    .menu-btn::before{
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 22px;
+        background-color: #fff;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        box-shadow: 0px 8px 0px #fff,
+                    0px -8px 0px #fff;
+        border-radius: 5px;
+    }
+
+    /* 
+
+    做漢堡另一個方式 三個 span 的方式
+
+    <span class="iconbar"></span>
+    <span class="iconbar"></span>
+    <span class="iconbar"></span>
+
+    .iconbar{
+        background-color: #fff;
+        display: block;
+        border-radius: 5px;
+        height: 4px;
+        margin: 4px;
+        width: 22px;
+        margin-left: 10px;
+    }
+    
+    */
+
+
+
+
+    /* ---------------------------------------------- */
+
+
+    /* 這裡給 position 很重要，因為所有子層都根據它來定位，而且要 fixed 固定在上面，所以要給 width:100% */
+    .hamburger{
+        height: 60px;
+        background-color: #023C59;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+    }
+
+    /* 選單裡面子選單內調的部分 */
+    /* phone */
+    .homenav .main-nav{
+        width: 33%;
+        height: 100vh;
+        background-color: #023c59;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        transform: translateX(-100%);
+        transition: .5s;
+    }
+
+    /* phone */
+    .homenav .main-nav a{
+        display: block;
+        text-decoration: none;
+        color: #2379a2;
+        padding: 18px 20px;
+    }
+
+    .homenav .number{
+        display: none;
+    }
+
+    /* phone */
+    .main-nav a:hover{
+        color: #fff;
+    }
+
+
+    .primary-nav ul{
+        display: none;
+        /* position: absolute; */
+        width: 100%;
+        background-color: #023c59;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+
+    .primary-nav li:hover > ul{
+        display: block;
+        /* width: 300px;*/
+    }
+
+    /* 因為 a 有其他的，這裡針對 logo 的 a 做處理 */
+    /* phone */
+    .homenav .logo{
+        position: absolute;
+        left: 60px;
+        top: 15px
+    }
+    .homenav .logo a{
+        color: #fff;
+        font-size: 25px;
+    }
+
+    /* --- 電話 icon 處理 */
+    .contact-icon a{
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 5px;
+        color: #023c59;
+    }
+    .contact-icon{
+        margin-top: 5px;
+        position: absolute;
+        right: 25px;
+        top: 15px;
+    }
+    .footernav .main-nav a:hover{
+        color: #fff;
+    }
+
+    .socialmedia-nav i:hover{
+        color:#023c59;
+        transition: .3s ease-in;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* header處理 */
+    .hamburger{
+        height: 130px;
+        background-color: #023C59;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        z-index: 1;
+        top: 0;
+    }
+    .hamburger label{
+        position: absolute;
+        display: none;
+        opacity: 0;
+    }
+
+
+    .homenav .logo{
+        position: relative;
+        margin: 0 auto;
+        padding: 15px 13px 0 0;
+        z-index: -1;
+    }
+    .homenav .logo a{
+        color: #fff;
+        font-size: 36px;
+    }
+
+    .homenav .number{
+        display: none;
+    }
+
+    .contact-icon a{
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 5px;
+        color: #023c59;
+        font-size: 25px;
+    }
+    .contact-icon{
+        margin-top: 5px;
+        position: absolute;
+        right: 30px;
+        top: 15px;
+    }
+
+    .banner-study h3{
+        text-align: center;
+    }
+
+    .main-nav a{
+        color: #2379a2;
+        font-size: 21px;
+    }
+    .primary-nav{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #023c59;
+        position: absolute;
+        top: 60px;
+        padding: 30px 0 0 0;
+        width: 100%;
+    }
+    .first-item:hover{
+        color: #fff;
+    }
+    .primary-nav i:nth-child(1){
+        display: none;
+    }
+    .primary-nav ul li a{
+        display: none;
+    }
+
+
+    /* intro */
+
+    .intro .intro-item{
+        display: flex;
+    }
+
+    .intro .intro-pic{
+        padding-top: 20px;
+    }
+
+    .intro .intro-txt h3, .intro .intro-txt p{
+        text-align: left;
+    }
+
+    .intro .intro-txt h3{
+        padding-left: 1.2em;
+    }
+
+    /* footer */
+    .footernav .main-nav ul{
+        display: flex;
+        justify-content: center;
+    }
+    .footernav .main-nav ul li{
+        padding: 0 15px;
+    }
+    .footernav .main-nav ul a:hover{
+        color: #fff;
+    }
+
+    .socialmedia-nav i:hover{
+        color:#023c59;
+        transition: .3s ease-in;
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+
+    .banner-study .row{
+        display: flex;
+    }
+
+    .xl-container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .banner-book-center .col-12{
+        display: flex;
+    }
+
+     .homenav .number{
+        display: block;
+        font-size: 25px;
+        position: absolute;
+        right: 80px;
+        top: 48px;
+        color: #fff;
+    }
+
+    .homenav .contact-icon{
+        display: none;
+    }
+
+    .homenav .logo{
+        position: absolute;
+        left: 70px;
+        top: 25px;
+        z-index: 2;
+    } 
+
+    .homenav .main-nav{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .homenav .main-nav li{
+        display: block;
+        margin-right: -500px;
+        position: relative;
+        bottom: 40px;
+        right: 250px;
+    }
+
+}
+
+
+
+/* banner-main */
+
+.banner-main{
+    background: url("./images/page01_img01.png");
+    background-color: #003c5a;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    padding: 15% 0 50%;
+    z-index: 0;
+}
+
+.banner-main h2{
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner-main p{
+    font-size: 20px;
+    color: #65B8E0;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.btn{
+    background-color: #FC8F43;
+    border-radius: 25px 25px 25px 25px;
+    color: #fff;
+    font-weight: bolder;
+    display: inline-block;
+    padding: 15px 50px;
+    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* banner-study */
+
+.banner-study{
+    background-color: #ECF4F7;
+
+}
+
+.banner-study h2{
+    color: #252525;
+    font-size: 35px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner-study h3{
+    color: #555555;
+    font-size: 23px;
+    /* text-align: center; */
+    padding: 0 100px;
+}
+
+.banner-study p{
+    color: #888888;
+    font-size: 18px;
+    padding: 30px 90px 15px;
+    /* text-align: center; */
+    line-height: 28px;
+}
+
+.banner-study-pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.banner-study .btn{
+    position: relative;
+    margin-bottom: 80px;
+}
+
+
+
+
+/* intro */
+
+
+.intro-title{
+    font-size: 38px;
+    text-align: center;
+    padding: 55px 90px 20px;
+}
+
+.intro-item{
+    padding: 28px;
+}
+
+.intro-pic i{
+    font-size: 70px;
+    text-align: center;
+    display: block;
+    color: #FC8F43;
+}
+
+
+.intro-txt h3{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.6)
+}
+
+.intro-txt p{
+    font-size: 20px;
+    text-align: center;
+    color: #999999;
+    padding: 0 30px;
+    line-height: 28px;
+} 
+
+
+
+/* banner-book-center */
+
+.banner-book-center{
+    background-color: #E9F2F5;
+    position: relative;
+    padding: 50px 0 32px;
+}
+.book-center-pic{
+    width: 100%;
+}
+.book-center-pic img{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+.book-center-txt h2{
+    font-size: 35px;
+    padding: 37px 80px 10px;
+    text-align: center;
+    line-height: 45px;
+}
+.book-center-txt h3{
+    font-size: 23px;
+    padding: 10px 80px;
+    text-align: center;
+    color: #666666;
+}
+.book-center-txt p{
+    font-size: 20px;
+    padding: 10px 80px;
+    text-align: center;
+    color: #999999;
+    line-height: 30px;
+}
+
+
+
+/* subscription */
+
+.subscription{
+    background-color: #023c59;
+    padding: 30px 0 130px;
+}
+
+.subscription-content h2{
+    font-size: 35px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: .7px;
+    padding: 30px 0 0;
+}
+
+.subscription-content p{
+    font-size: 18px;
+    text-align: center;
+    color: #65B8E0;
+    padding: 0 65px 30px;
+}
+
+.subscription-content input{
+    display: block;
+    margin: 0 auto;
+    padding: 18px 270px 18px 10px;
+    border-radius: 25px;
+    outline: none;
+}
+
+/* experience */
+.banner-experience{
+    background-color: #E76F32;
+    padding: 50px 0;
+}
+
+.experience-content h2{
+    color: #fff;
+    font-size: 33px;
+    text-align: center;
+}
+.experience-content img{
+    display: block;
+    margin: 0 auto;
+    padding: 26px 0;
+}
+.experience-content em{
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0 90px;
+    text-align: center;
+}
+.experience-content p{
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+    padding: 26px 0 24px 0;
+}
+
+.experience-pagechange{
+    padding: 23px 0;
+}
+
+.experience-pagechange ul{
+    display: flex;
+    justify-content: center;
+}
+.experience-pagechange a{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff40;
+    margin: 0 5px;
+}
+
+.experience-pagechange li:last-child a{
+    background-color: #fff;
+    transition: .3s;
+}
+
+.experience-pagechange li:hover a{
+    background-color: #fff;
+    transition: .3s;
+}
+
+
+/* footernav*/
+
+
+.footernav{
+    background-color: #272727;
+    padding: 40px 0;
+    border-bottom: 1px solid #343333;
+}
+
+.footernav .logo{
+    text-align: center;
+    /* font-size: 100px; */
+}
+
+
+.footernav .logo a{
+    font-size: 40px;
+    color: #fff;
+}
+
+.footernav .main-nav ul{
+    padding: 50px 0;
+}
+
+.footernav .main-nav li{
+    /* background-color: brown; */
+    text-align: center;
+}
+
+.footernav .main-nav li a{
+    color: #7d7d7d;
+    line-height: 27px;
+}
+
+.footernav .socialmedia-nav li a{
+    color: #7d7d7d;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.footernav .socialmedia-nav ul{
+    /* background-color: chartreuse; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+/* footercopyright */
+
+.copyright{
+    background-color: #272727;
+    padding: 25px 0;
+}
+
+.copyright p{
+    font-size: 15px;
+    text-align: center;
+    color: #7d7d7d;
+    padding: 0 70px;
+}
+.copyright a{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
