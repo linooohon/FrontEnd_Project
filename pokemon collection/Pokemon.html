@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="picCollection">
+        <div class="box">
+            <h1><a href="https://www.pokemon.com/us/" target="_blank">Pokémon Collection</a></h1>
+        </div>
+        <div class="button-block">
+            <button onclick="fetchPokemon()" class="button-item" id="control">View all Pokémon<br>innerHTML</button>
+            <button onclick="fetchPokemonSecondWay()" class="button-item" id="controlSecond">View all
+                Pokémon<br>appendChild</button>
+            <button onclick="doReset()" class="button-item" id="clean" style="width: 180px;">Reset</button>
+        </div>
+        <div id="homePic"></div>
+        <div id="container"></div>
+    </div>
+
+    <script>
+        window.onload = appendPokemon();
+
+        function appendPokemon() {
+            let img = document.createElement("img");
+            img.setAttribute("src", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png");
+            homePic.appendChild(img);
+        }
+
+        function fetchPokemon() {
+
+            let pokemons = "";
+            homePic.innerHTML = "";
+
+            for (let i = 1; i < 890; i++) {
+                let fileName = i.toString().padStart(3, "0");
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let pokemonImg = `<img src = "${pathFile}" >`;
+                pokemons += pokemonImg;
+            }
+            container.innerHTML = pokemons;
+        }
+
+        function fetchPokemonSecondWay() {
+
+            homePic.innerHTML = "";
+
+            for (let i = 1; i < 890; i++) {
+                let img = document.createElement("img");
+                let fileName = i.toString().padStart(3, "0");
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                img.src = pathFile;
+                container.appendChild(img);
+            }
+        }
+
+        function doReset() {
+            container.innerHTML = "";
+            homePic.innerHTML = "";
+            let img = document.createElement("img");
+            img.setAttribute("src", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png");
+            homePic.appendChild(img);
+        }
+    </script>
+
+
+</body>
+
+</html>
