@@ -3,9 +3,11 @@
     padding: 0;
     list-style: none;
 }
+
 body {
     background-color: aliceblue;
 }
+
 .picCollection {
     position: relative;
 }
@@ -20,16 +22,19 @@ h1 {
     border-radius: 10px;
     z-index: 1;
 }
+
 h1 a {
     display: block;
     text-decoration: none;
     color: bisque;
     animation: flip 7s infinite;
 }
+
 h1:hover a {
     color: #000;
     transition: 1s;
 }
+
 @keyframes flip {
     0% {
         transform: rotateY(0deg);
@@ -49,6 +54,7 @@ h1:hover a {
     justify-content: center;
     position: relative;
 }
+
 .button-item {
     font-family: 'Righteous', cursive;
     font-size: 20px;
@@ -60,6 +66,7 @@ h1:hover a {
     height: 100px;
     box-shadow: 1px 0px 5px #aaa;
 }
+
 .button-item:hover {
     transform: scale(1.1);
     background-color: rgb(26, 117, 117);
@@ -80,9 +87,11 @@ img {
 #control {
     padding: 0 15px;
 }
+
 #controlSecond {
     padding: 0 15px;
 }
+
 #container {
     width: 75%;
     margin: auto;
@@ -90,6 +99,7 @@ img {
     border-right: 4px dotted #aaa;
     margin-top: 20px;
 }
+
 #homePic {
     position: absolute;
     top: 270px;
@@ -97,6 +107,7 @@ img {
     opacity: 0.5;
     z-index: -1;
 }
+
 #homePic img:hover {
     transform: scale(1.1);
     border-radius: 50%;
@@ -105,6 +116,7 @@ img {
     opacity: 1;
     margin: 0 0 0 3px;
 }
+
 #container img:hover {
     transform: scale(1.1);
     border-radius: 50%;
@@ -159,6 +171,7 @@ img {
         box-shadow: 0 0 20px #eb8547;
         transform: scale(2);
     }
+
     50% {
         box-shadow: 0 0 35px #eb8547;
         transform: scale(3);
@@ -173,8 +186,6 @@ img {
         box-shadow: 0 0 50px #eb8547;
         transform: scale(1);
     }
-
-
 }
 
 @keyframes rotate-animation2 {
@@ -199,26 +210,32 @@ img {
         box-shadow: 0 0 20px #d6eb47;
         transform: rotateX(67.5deg) rotateY(67.5deg) rotateZ(67.5deg) scale(1);
     }
+
     10% {
         box-shadow: 0 0 25px #d6eb47;
         transform: rotateX(117.5deg) rotateY(117.5deg) rotateZ(117.5deg) scale(2);
     }
+
     30% {
         box-shadow: 0 0 30px #d6eb47;
         transform: rotateX(217.5deg) rotateY(217.5deg) rotateZ(217.5deg) scale(4);
     }
+
     50% {
         box-shadow: 0 0 35px #d6eb47;
         transform: rotateX(317.5deg) rotateY(317.5deg) rotateZ(317.5deg) scale(6);
     }
+
     70% {
         box-shadow: 0 0 40px #d6eb47;
         transform: rotateX(-217.5deg) rotateY(-217.5deg) rotateZ(-217.5deg) scale(8);
     }
+
     90% {
         box-shadow: 0 0 47px #d6eb47;
         transform: rotateX(-117.5deg) rotateY(-117.5deg) rotateZ(-117.5deg) scale(10);
     }
+
     100% {
         box-shadow: 0 0 50px #d6eb47;
         transform: rotateX(-67.5deg) rotateY(-67.5deg) rotateZ(-67.5deg) scale(11);
