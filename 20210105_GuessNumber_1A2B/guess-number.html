@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="icon" href="../../favicon.ico">-->
+
+  <title>Guess number</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+  <!-- Custom styles for this template -->
+  <link href="stylesheets/dashboard.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<style>
+  .guide{
+    color: rgb(66,138,202);
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">1A2B - Guess Game</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">Game Time<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">輸入4個數，<br>若全部數字及順序都對，<br>就贏了！</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Export</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item</a></li>
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+          <li><a href="">More navigation</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="btn-group btn-group-justified">
+                <a id="start" type="button" class="btn btn-default">開始</a>
+                <a id="restart" type="button" class="btn btn-default">放棄重來</a>
+                <a id="cheat" type="button" class="btn btn-default">看答案</a>
+              </div>
+              <br>
+              <ul id="guessResults" class="list-group">
+                <li class="list-group-item">
+                  <span class="label label-danger">0A1B</span>
+                  <!--<span class="badge">0A1B</span>-->
+                  1234
+                </li>
+                <li class="list-group-item">
+                  <span class="label label-danger">0A3B</span>
+                  <!--<span class="badge">0A3B</span>-->
+                  3456
+                </li>
+                <li class="list-group-item">
+                  <span class="label label-danger">0A2B</span>
+                  <!--<span class="badge">0A2B</span>-->
+                  4567
+                </li>
+                <li class="list-group-item">
+                  <span class="label label-danger">2A0B</span>
+                  <!--<span class="badge">2A0B</span>-->
+                  6089
+                </li>
+                <li class="list-group-item">
+                  <span class="label label-danger">3A0B</span>
+                  <!--<span class="badge">3A0B</span>-->
+                  6345
+                </li>
+                <li class="list-group-item">
+                  <span class="label label-success">4A0B</span>
+                  <!--<span class="badge badge-success">4A0B</span>-->
+                  6385
+                </li>
+              </ul>
+              <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon1">猜答案</span>
+                <input id="userGuess" type="text" name="" class="form-control" value="" required="required">
+                <span class="input-group-btn">
+                  <a id="guess" type="button" class="btn btn-default">猜!</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+  <!-- <script src="scripts/bootstrap.min.js"></script> -->
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+  <script>
+    let startButton = document.querySelector("#start");
+    let restartButton = document.querySelector("#restart");
+    let showAnswerButton = document.querySelector("#cheat");
+    let userSubmitButton = document.querySelector("#guess");
+    let userGuessInputBar = document.querySelector("#userGuess");
+    let showCompareResultList = document.querySelector("#guessResults");
+    let answer = [];
+
+    startButton.addEventListener("click", function () {
+      showCompareResultList.innerHTML = null;
+      answer = createRandomNumber();
+      console.log(answer);
+    });
+
+    restartButton.addEventListener("click", function () {
+      showCompareResultList.innerHTML = null;
+      answer = [];
+      answer = createRandomNumber();
+    });
+
+    showAnswerButton.addEventListener("click", function () {
+      alert(answer.join(""));
+    });
+
+    userSubmitButton.addEventListener("click", function () {
+      checkUserInputNumber();
+    });
+
+    function createRandomNumber() {
+      while (answer.length < 4) {
+        let number = Math.floor(Math.random() * 10);
+        if (answer.find(x => x == number) == undefined) {
+          answer.push(number);
+        }
+      }
+      return answer;
+    }
+
+    function checkUserInputNumber() {
+      let userGuessInputBarValue = userGuessInputBar.value;
+      if (userGuessInputBarValue.length !== 4) {
+        alert("請輸入4個數字");
+        userGuessInputBarValue= "";
+      } else if (userGuessInputBarValue.split("").map(item => parseInt(item)).includes(NaN)) {
+        alert("請輸入4個數字");
+        userGuessInputBarValue = "";
+      } else if (checkSameNumber(userGuessInputBarValue) == false) {
+        alert("請輸入4個不同數字");
+        userGuessInputBarValue= "";
+      } else {
+        doGuess(userGuessInputBarValue);
+      }
+    }
+
+    function checkSameNumber(userGuessInputBarValue) {
+      let number = userGuessInputBarValue;
+      for (let i = 0; i < number.length; i++) {
+        if (number[0] == number[1] || number[0] == number[2] || number[0] == number[3] ||
+          number[1] == number[2] || number[1] == number[3] || number[2] == number[3]) {
+          return false;
+        }
+      }
+    }
+
+    function doGuess(userGuessInputBarValue) {
+      let a = 0;
+      let b = 0;
+      let guess = Array.from(userGuessInputBarValue);
+      answer.filter(x => guess.includes(x.toString())).forEach(element => {
+        if (answer.indexOf(element) == guess.indexOf(element.toString())) {
+          a++;
+        } else {
+          b++;
+        }
+      });
+      if (a == 4) {
+        showMessage("label label-success", userGuessInputBarValue,
+          `${a}A${b}B`);
+        alert("You Win!");
+      } else {
+        showMessage("label label-danger", userGuessInputBarValue,
+          `${a}A${b}B`);
+      }
+    }
+    function showMessage(style, number, result) {
+      let liNode = document.createElement("li");
+      liNode.className = "list-group-item";
+      let spanNode = document.createElement("span");
+      spanNode.className = style;
+      spanNode.innerText = result;
+      liNode.appendChild(spanNode);
+      liNode.appendChild(document.createTextNode(number));
+      showCompareResultList.appendChild(liNode);
+    }
+  </script>
+</body>
+
+</html>
