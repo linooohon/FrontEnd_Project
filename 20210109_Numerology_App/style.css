@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-color: rgb(249, 249, 237);
+}
+
+.container{
+    width: 100%;
+    color: #aaa;
+    font-family: 'Noto Sans TC', sans-serif;
+    position: relative;
+    top: 30vh;
+}
+
+.title-box{
+    background-color: rgb(12, 14, 14);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 0;
+    width: 300px;
+}
+.title-box:hover h1{
+    color:aliceblue;
+}
+
+.title-box a{
+    text-decoration: none;
+    color:rgb(135, 143, 143);
+}
+.title-box h1{
+    font-size: 35px;
+}
+.title-box h5{
+    display: none;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+.inputbox{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#date-picker{
+    padding: 20px 63px;
+    background-color: rgb(181, 175, 175);
+    color: rgb(25, 26, 26);
+    opacity: 0.5;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+
+#submit-button{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: .3s;
+    outline: none;
+}
+#submit-button:hover {
+    background-color: rgb(181, 175, 175);
+    color:aliceblue;
+    transform:scale(1.1);
+}
+
+.footer{
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.circle {
+display: flex;
+justify-content: center;
+position: relative;
+top: 250px;
+}
+
+.circle div {
+display: inline-block;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: rgb(41, 38, 38);
+animation: circle-move 25s infinite;
+}
+
+@keyframes circle-move {
+    0% {
+        transform: rotateY(180deg);
+    }
+    50% {
+        transform: rotateY(1800deg);
+    }
+    100% {
+        transform: rotateY(3600deg);
+    }
+}
