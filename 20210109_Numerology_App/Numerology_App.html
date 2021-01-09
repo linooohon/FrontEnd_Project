@@ -118,12 +118,11 @@
                 url: `http://buildschoolapi.azurewebsites.net/api/number/GetNumerology?constellation=${constellationContent}&number=${numberContent}`,
                 type: "get",
                 data: {},
-                //contentType: "text/plain; charset=utf-8",
                 success: function (response) {
                     personalitiesValue.innerText = response;
                     $(".footer").show();
                 },
-                error: function (err) {
+                error: function () {
                     alert("不想透露生日就不要玩 >____^");
                 }
             });
