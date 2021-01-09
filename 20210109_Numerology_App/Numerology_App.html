@@ -118,7 +118,7 @@
                 url: `http://buildschoolapi.azurewebsites.net/api/number/GetNumerology?constellation=${constellationContent}&number=${numberContent}`,
                 type: "get",
                 data: {},
-                contentType: "text/plain; charset=utf-8",
+                //contentType: "text/plain; charset=utf-8",
                 success: function (response) {
                     personalitiesValue.innerText = response;
                     $(".footer").show();
