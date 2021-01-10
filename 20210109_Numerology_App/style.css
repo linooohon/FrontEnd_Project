@@ -12,7 +12,7 @@ body{
     color: #aaa;
     font-family: 'Noto Sans TC', sans-serif;
     position: relative;
-    top: 20vh;
+    top: 15vh;
 }
 
 .title-box{
@@ -81,7 +81,7 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
-    top: 15vh;
+    top: 10vh;
 }
 
 .circle div {
