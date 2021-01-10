@@ -78,10 +78,10 @@ body{
 }
 
 .circle {
-display: flex;
-justify-content: center;
-position: relative;
-top: 250px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 25vh;
 }
 
 .circle div {
