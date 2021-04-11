@@ -118,11 +118,13 @@
     /* max-width: 5rem; */
 }
 
-/* .task-item p {
-    overflow: auto;
-    width: 6rem;
+
+.task-item .content{
     margin-bottom: 0;
-} */
+   width: fit-content;
+   /* overflow: auto; */
+}
+
 
 .prev-date{
     color: rgb(189, 187, 187);
