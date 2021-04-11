@@ -312,8 +312,8 @@ function storeEveryTaskShowEveryTask(e) {
             taskLi.appendChild(i);
             div.appendChild(taskLi);
 
-            console.log(storageArray);
-            console.log(localStorage);
+            // console.log(storageArray);
+            // console.log(localStorage);
         }
         popupContent.style.display = "none";
     }
@@ -386,18 +386,14 @@ function makeId() {
 
 //刪除 task
 function deleteTask(event) {
-    console.log(storageArray);
-    console.log(localStorage);
-    console.log(event.target);
+    // console.log(localStorage);
+    // console.log(event.target);
     let Id = event.target.id;
     let targetRemoveTask = document.getElementById(Id);
-    console.log(targetRemoveTask);
     targetRemoveTask.remove();  //在畫面上移除它
-    console.log(targetRemoveTask);
     // console.log(targetRemoveTask);
-    // console.log(storageArray);
     storageArray.splice(Id, 1);
-    console.log(storageArray);
+    // console.log(storageArray);
     if (storageArray.length > 0) {
         storageArray.forEach((task, index) => {
             task.id = index;
@@ -409,8 +405,8 @@ function deleteTask(event) {
         storageArray = [];
         localStorage.removeItem("item");
     }
-    console.log(storageArray);
-    console.log(localStorage);
+    // console.log(storageArray);
+    // console.log(localStorage);
 
     // jsonStringStorageArray = JSON.stringify(storageArray);
     // localStorage.setItem("item", jsonStringStorageArray);
