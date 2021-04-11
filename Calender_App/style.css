@@ -104,6 +104,8 @@
 
 .fa-trash{
     padding-right: 0.5rem;
+    overflow: visible;
+    z-index: 50;
 }
 .fa-trash:hover {
     transform: scale(2);
@@ -111,8 +113,16 @@
 
 .task-item {
     padding-left: 0.5rem;
-    overflow: auto;
+    padding-right: 2rem;
+    /* overflow: auto; */
+    /* max-width: 5rem; */
 }
+
+/* .task-item p {
+    overflow: auto;
+    width: 6rem;
+    margin-bottom: 0;
+} */
 
 .prev-date{
     color: rgb(189, 187, 187);
@@ -253,7 +263,7 @@
 /* .clean-days-border{
     background-color: rgb(236, 237, 238);
 } */
-.show-days-border{
+.show-days-background-color{
     /* border: 0.1rem solid #aaa; */
     background-color: rgb(236, 237, 238);
 }

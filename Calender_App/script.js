@@ -148,7 +148,6 @@
                 }
                 div.innerHTML = j;
                 monthDays.appendChild(div);
-
                 everydayIdOfMonthArray.push(div.id);
             }
             // console.log(everydayIdOfMonthArray);
@@ -171,24 +170,14 @@
 
         //彈出popup事項輸入框 function
         function showPopUp(e) {
+            console.log(e.target);
             popupContent.style.opacity = "100";
-            e.stopPropagation();
-            if (e.target.className === "task-item") {
-                popupInput.value = e.target.innerText;
-                fixedTaskId = e.target.id;
-                fixedTaskSort = e.target.dataset.sort;
-                // console.log(fixedTaskSort);
-                // console.dir(e.target);
-                popupInput.focus();
-            } else {
-                everydayIdOfMonthArray.forEach((id) => {
-                    let div = document.getElementById(id);
-                    div.classList.remove("show-days-border");
-                })
-                if (e.target.className !== "today") {
-                    e.target.classList.add("show-days-border");
-                }
+            if (e.target.className === "day-box") {
+                fixedTaskId = -1;
                 popupInput.value = null;
+                givePopUpBoxPosition(e);
+            } else {
+                // popupInput.value = null;
                 givePopUpBoxPosition(e);
             }
         }
@@ -196,6 +185,18 @@
 
         //滑到後彈出 popup事項輸入框
         document.querySelector(".days").addEventListener("click", showPopUp);
+
+        //修改內容
+        $(".days").on("click", ".content", function (e) {
+            popupContent.style.opacity = "100";
+            // console.log(e.target);
+            // e.stopPropagation();
+            popupInput.value = e.target.innerText;
+            fixedTaskId = e.target.id;
+            fixedTaskSort = e.target.dataset.sort;
+            popupInput.focus();
+            givePopUpBoxPosition(e);
+        });
 
         // 刪除task 藉由 jq 的 on 動態綁定用法找到子層的dom  
         // 找到垃圾桶的id 同時也是對應 task 的 id 把它從陣列刪掉 
@@ -208,6 +209,17 @@
 
         //要修改點task 出現輸入框
         $(".days").on("click", ".task-item", function (e) {
+
+            // console.log($(this).find(".content").text());
+
+            // everydayIdOfMonthArray.forEach((id) => {
+            //     let div = document.getElementById(id);
+            //     div.classList.remove("show-days-background-color");
+            // })
+            // if (e.target.className !== "today") {
+            //     e.target.classList.add("show-days-background-color");
+            // }
+            popupInput.value = $(this).find(".content").text();
             givePopUpBoxPosition(e);
         });
 
@@ -231,35 +243,35 @@
 
         //存一筆 show一筆
         function storeEveryTaskShowEveryTask(e) {
+            // console.log(e.target);
 
             //修改 改陣列 改localStorage show出來也改
             if (e.keyCode === 13 && popupInput.value !== "") {
+            // console.log(e.target);
+
                 // console.log(fixedTaskId);
                 if (fixedTaskId >= 0) { //用大於等於0控制我現在是不是要修改 因為點擊想修改的後 fixedTaskId 才會大於等於 0 
                     storageArray.forEach((everyTask) => {
                         if (fixedTaskId == everyTask.id) { //注意這裡其實是字串跟數字在比 所以用 兩個 等於就好 
+                            //塞回陣列
                             everyTask.value = popupInput.value;
                             everyTask.color = colorId;
+                            //重新整理localStorage
                             jsonStringStorageArray = JSON.stringify(storageArray);
                             localStorage.setItem("item", jsonStringStorageArray);
-                            popupInput.value = null;
-                            // let div = document.getElementById(everyTask.taskSort);
+                            //找到對應dom id 
+                            //更改裡面的 p 的 content 
+                            //更改 dom 的 backgroundcolor
                             let taskLi = document.getElementById(everyTask.id);
-                            let i = document.createElement("i");
-                            i.classList.add("fas", "fa-trash");
-                            i.setAttribute("job", "delete");
-                            i.setAttribute("data-sort", everyTask.taskSort);
-                            i.id = everyTask.id;
-                            taskLi.innerHTML = everyTask.value;
-                            taskLi.style.backgroundColor = everyTask.color;
-                            taskLi.appendChild(i);
+                            taskLi.querySelectorAll("p")[0].innerText = popupInput.value;
+                            taskLi.style.backgroundColor = colorId;
+                            //把 input 變空
+                            popupInput.value = null;
                             fixedTaskId = -1; //這裡很重要最後修改完要把 fixedTaskId 變成 -1 結束修改這件事，這樣才不會一直進入這個迴圈，每次只能改這個
-                            // div.appendChild(taskLi);
                         }
                     });
 
                 } else { //新增 加進陣列 加近localStorage show出來
-
                     e.preventDefault();
                     makeId();
                     let popupInputValue = popupInput.value;
@@ -275,8 +287,6 @@
                     storageArray.push(myObject);
                     jsonStringStorageArray = JSON.stringify(storageArray);
                     localStorage.setItem("item", jsonStringStorageArray);
-                    //console.log(jsonStringStorageArray);
-                    // console.log(JSON.parse(localStorage.getItem("item")));
                     popupInput.value = null;
 
 
@@ -285,17 +295,21 @@
                     let div = document.getElementById(myObject.taskSort);
                     let taskLi = document.createElement("li");
                     let i = document.createElement("i");
+                    let p = document.createElement("p");
                     i.classList.add("fas", "fa-trash");
                     i.setAttribute("job", "delete");
                     i.setAttribute("data-sort", myObject.taskSort);
                     taskLi.id = myObject.id;
                     i.id = myObject.id;
-                    taskLi.innerHTML = myObject.value;
+                    p.id = myObject.id;
+                    p.innerHTML = myObject.value;
+                    p.classList.add("content");
+                    p.setAttribute("data-sort", myObject.taskSort);
                     taskLi.classList.add("task-item");
                     taskLi.setAttribute("data-sort", myObject.taskSort);
                     taskLi.style.backgroundColor = myObject.color;
+                    taskLi.appendChild(p);
                     taskLi.appendChild(i);
-                    // taskUl.appendChild(taskLi) 
                     div.appendChild(taskLi);
                 }
                 popupContent.style.display = "none";
@@ -337,17 +351,21 @@
                         let div = document.getElementById(everydayId);
                         let taskLi = document.createElement("li");
                         let i = document.createElement("i");
+                        let p = document.createElement("p");
                         i.classList.add("fas", "fa-trash");
                         i.setAttribute("job", "delete");
                         i.setAttribute("data-sort", everyTask.taskSort);
                         taskLi.id = everyTask.id;
                         i.id = everyTask.id;
-                        taskLi.innerHTML = everyTask.value;
+                        p.id = everyTask.id;
+                        p.innerHTML = everyTask.value;
+                        p.classList.add("content");
+                        p.setAttribute("data-sort", everyTask.taskSort);
                         taskLi.classList.add("task-item");
                         taskLi.setAttribute("data-sort", everyTask.taskSort);
                         taskLi.style.backgroundColor = everyTask.color;
+                        taskLi.appendChild(p);
                         taskLi.appendChild(i);
-                        // taskUl.appendChild(taskLi) 
                         div.appendChild(taskLi);
                     }
                 })
