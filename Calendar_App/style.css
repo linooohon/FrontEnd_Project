@@ -154,6 +154,11 @@
 .day-box {
     height: 7.5rem;
     overflow: auto;
+    /* width: 1px; */
+}
+
+.day-box::-webkit-scrollbar{
+    width: 1px;
 }
 
 
