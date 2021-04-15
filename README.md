@@ -1,4 +1,4 @@
-# My Frontent Projects
+# My FrontEnd Projects
 ---
 
 ## Sunplant_Layout
